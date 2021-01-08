@@ -1,0 +1,39 @@
+version: '3'
+services:
+
+  # The Application
+  app:
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    working_dir: /var/www
+    command: [ "/var/www/app.entrypoint" ]
+    volumes:
+      - ./:/var/www
+    env_file: 
+      - docker.env
+    depends_on: 
+      - database
+    networks: 
+      - default
+    ports:
+      - 8001:8001
+
+  database:
+    image: mysql:5.6
+    volumes:
+      - ./.data:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=forge"
+      - "MYSQL_USER=forge"
+      - "MYSQL_PASSWORD=secret"
+      - "MYSQL_ROOT_PASSWORD=secret"
+    ports:
+      - "33061:3306"
+    user: "1000:50"
+    networks: 
+      - default
+      
+networks:
+  default:
+    driver: bridge    

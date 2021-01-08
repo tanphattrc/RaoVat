@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ -d "./vendor" ]; then
+echo "vendor already exists, skipping `composer install.`"
+else
+echo "executing `composer install`"
+composer install
+fi
+
+if [ -d "./node_modules" ]; then
+echo "node_modules already exists, skipping `npm install.`"
+else
+echo "executing `npm install`"
+npm install
+npm run dev
+fi
+
+php artisan serve --host=0.0.0.0 --port=8001

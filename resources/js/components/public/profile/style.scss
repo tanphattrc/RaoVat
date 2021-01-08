@@ -1,0 +1,70 @@
+.wrapper {
+    max-width: 80%;
+    margin: auto;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #wizard {
+    position: relative;
+    background: #fff;
+    height: 554px;
+    width: 738px;
+    padding: 71px 93px 0;
+    border-radius: 10px;
+  }
+  .avatar-picker{
+    padding-left: 15px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: inline-block;
+    color: #333;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+  }
+  .avartar-picker label {
+      display: block;
+      cursor: pointer;
+      display: inline-block;
+      color: #333;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 800;
+  }
+  
+  .form-control {
+    height: 46px;
+    border: none;
+    background: #f7f7f7;
+    width: 100%;
+    padding: 0 25px;
+    border-radius: 23px;
+    color: #333;
+    text-align: center;
+  }
+  .form-holder {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 25px;
+  }
+  
+  label
+  {
+    font-style: italic;
+  }
+  .btn-submit {
+    background: rgba(255, 62, 0, 0.98);
+  
+    border-radius: 10px;
+    margin: auto;
+    font-size: 15px;
+    color: navajowhite;
+  }
+  .btn-submit:hover {
+    background: rgba(240, 60, 2, 0.84);
+  
+    transform: translateY(4%);
+  }
